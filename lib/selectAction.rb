@@ -6,16 +6,16 @@ module SelectAction
 		primarySel.find_each do |priItem|
 			@PSHtml += '<option value="' + priItem.id.to_s
 			if priItem.id.to_s == pkId
-				@PSHtml += '" selected>'+ priItem.selectDetail["prDisp"]
+				@PSHtml += '" selected>'+ priItem[selectDetail["prDisp"]]
 			else
-				@PSHtml += '">'+ priItem.selectDetail["prDisp"]
+				@PSHtml += '">'+ priItem[selectDetail["prDisp"]]
 			end				
 			@PSHtml += '</option>'
 		end
 		@SSHtml = '<option value="-1">Select</option>'
 		secondarySel.find_each do |secItem|
 			@SSHtml += '<option value="' + secItem.id.to_s
-			@SSHtml += '">'+ secItem.selectDetail["secDisp"]
+			@SSHtml += '">'+ secItem[selectDetail["secDisp"]]
 			@SSHtml += '</option>'
 		end
 	end
