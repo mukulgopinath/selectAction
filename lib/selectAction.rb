@@ -18,5 +18,7 @@ module SelectAction
 			@SSHtml += '">'+ secItem[selectDetail["secDisp"]]
 			@SSHtml += '</option>'
 		end
+		@result = [@PSHtml,@SSHtml]
+		return @result
 	end
 end
