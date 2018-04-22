@@ -3,10 +3,10 @@ require "selectAction/version"
 module SelectAction
 	def self.getOptionHtml(pkId, primarySel, secondarySel, selectDetail)	
 		@PSHtml = ''
-		@brands.find_each do |priItem|
+		primarySel.find_each do |priItem|
 			@PSHtml += '<option value="' + priItem.id.to_s
 			if priItem.id.to_s == pkId
-				@PSHtml += '" selected>'+ priItem.name
+				@PSHtml += '" selected>'+ priItem.selectDetail["prDisp"]
 			else
 				@PSHtml += '">'+ priItem.selectDetail["prDisp"]
 			end				
